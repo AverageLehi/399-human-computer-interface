@@ -4,239 +4,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Units Interactive Masterclass</title>
+    <title>CSS Units and Size</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <button class="notes-toggle" type="button" aria-expanded="false" aria-controls="presenter-panel">
+        Presenter Notes
+    </button>
 
-    <header>
-        <h1>CSS Units Masterclass</h1>
-        <p>A live, interactive guide to absolute and relative sizing in CSS.</p>
-        <p class="header-note">
-            Live Demo: Watch how values change as CSS is applied in real time.
-        </p>
-    </header>
+    <div class="page-shell">
+        <main class="presentation-content">
+            <header>
+                <h1>CSS Units and Size</h1>
+                <p>A live, interactive guide to absolute and relative sizing in CSS.</p>
+                <p class="header-note">
+                    Live Demo: Watch how values change as CSS is applied in real time.
+                </p>
+            </header>
 
-    <section class="slide">
-        <span class="slide-badge">01</span>
-        <h2 class="slide-title">Slide 1: Absolute vs. Relative Units</h2>
-        <div class="speaker-notes">
-            <p>Welcome, everyone! Today, we're diving into CSS units. Understanding units is the foundation of building websites that look great whether you are viewing them on a massive desktop monitor or a tiny mobile phone.</p>
-            <p>In CSS, we divide units into two main categories: <strong>absolute</strong> (fixed, uncompromising units) and <strong>relative</strong> (adaptable, contextual units).</p>
-        </div>
-    </section>
+            <section class="slide" id="slide-01">
+                <div class="slide-topbar">
+                    <span class="slide-badge">01</span>
+                    <nav class="slide-nav" aria-label="Jump to slide">
+                        <a href="#slide-01">01</a>
+                        <a href="#slide-02">02</a>
+                        <a href="#slide-03">03</a>
+                        <a href="#slide-04">04</a>
+                        <a href="#slide-05">05</a>
+                        <a href="#slide-06">06</a>
+                        <a href="#slide-07">07</a>
+                    </nav>
+                </div>
+                <h2 class="slide-title">Slide 1: Absolute vs. Relative Units</h2>
+                <div class="learn-box">
+                    <strong>Learn:</strong>
+                    <p>CSS units describe how sizes are measured on a page. They mainly fall into two groups.</p>
+                    <table class="learn-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Absolute</td>
+                                <td>Stays fixed and does not depend on surrounding elements.</td>
+                                <td><code>px</code></td>
+                            </tr>
+                            <tr>
+                                <td>Relative</td>
+                                <td>Changes based on a parent element, the root, or the viewport.</td>
+                                <td><code>em</code>, <code>rem</code>, <code>%</code>, <code>vw</code>, <code>vh</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-    <section class="slide">
-        <span class="slide-badge">02</span>
-        <h2 class="slide-title">Slide 2: Pixels (<code>px</code>)</h2>
-        <div class="speaker-notes">
-            <p><strong>Important:</strong> A CSS pixel is not a literal physical glowing dot on your screen. Because retina screens pack lots of physical dots into small spaces, a CSS pixel is actually a standardized measurement, roughly 1/96th of an inch.</p>
-            <p>Pixels are absolute. If you say <code>font-size: 16px</code>, it stays that size regardless of what parent container it sits inside. It is consistent, but it is not responsive.</p>
-        </div>
+            <section class="slide" id="slide-02">
+                <div class="slide-topbar">
+                    <span class="slide-badge">02</span>
+                    <nav class="slide-nav" aria-label="Jump to slide">
+                        <a href="#slide-01">01</a>
+                        <a href="#slide-02">02</a>
+                        <a href="#slide-03">03</a>
+                        <a href="#slide-04">04</a>
+                        <a href="#slide-05">05</a>
+                        <a href="#slide-06">06</a>
+                        <a href="#slide-07">07</a>
+                    </nav>
+                </div>
+                <h2 class="slide-title">Slide 2: Pixels (<code>px</code>)</h2>
+                <div class="learn-box">
+                    <strong>Learn:</strong>
+                    <p><code>px</code> is an absolute CSS unit. It gives an element a fixed size that does not change based on its parent container.</p>
+                    <p>Pixels are useful when you want consistent sizing, but they are less flexible than relative units in responsive layouts.</p>
+                </div>
 
-        <div class="prediction-box">
-            <strong>Prediction:</strong>
-            If we set one text to 16px and another to 32px, what will happen?
-            <ul>
-                <li>Will it depend on the parent?</li>
-                <li>Or will it stay fixed?</li>
-            </ul>
-        </div>
+                <div class="prediction-box">
+                    <strong>Prediction:</strong>
+                    If we set one text to 16px and another to 32px, what will happen?
+                    <ul>
+                        <li>Will it depend on the parent?</li>
+                        <li>Or will it stay fixed?</li>
+                    </ul>
+                </div>
 
-        <div class="action-box">
-            <strong>Practice:</strong> Let's give these text boxes some fixed sizes in our IDE.
-            <pre><code>.px-text-small { font-size: 16px; }
+                <div class="action-box">
+                    <strong>Practice:</strong> Let's give these text boxes some fixed sizes in our IDE.
+                    <pre><code>.px-text-small { font-size: 16px; }
 .px-text-large { font-size: 32px; }</code></pre>
-        </div>
+                </div>
 
-        <div class="demo-area">
-            <p class="demo-hint"><em>No sizing applied yet</em></p>
-            <div>
-                <strong class="px-text-small">Sample text A</strong>
-            </div>
-            <div class="demo-spacer"></div>
-            <div>
-                <strong class="px-text-large">Sample text B</strong>
-            </div>
-        </div>
-
-        <details class="prediction-answer">
-            <summary>Prediction Answer</summary>
-            <p>Both values stay fixed. The 16px text remains smaller than the 32px text, and neither one depends on the parent element.</p>
-        </details>
-    </section>
-
-    <section class="slide">
-        <span class="slide-badge">03</span>
-        <h2 class="slide-title">Slide 3: Em (<code>em</code>)</h2>
-        <div class="speaker-notes">
-            <p>Now we enter the world of relative units. The <code>em</code> unit calculates its math based on the specific <code>font-size</code> of its parent element.</p>
-            <p>However, you must be incredibly careful. <code>em</code> sizes compound when you nest them. Without CSS applied, the boxes below all look the same size. Let's see what happens when we use <code>em</code>.</p>
-        </div>
-
-        <div class="prediction-box">
-            <strong>Prediction:</strong>
-            If the parent is 20px and the child is 2em:
-            <ul>
-                <li>What will the child size be?</li>
-                <li>If the grandchild is also 2em, what happens next?</li>
-                <li>Does it stay the same or grow again?</li>
-            </ul>
-        </div>
-
-        <div class="action-box">
-            <strong>Practice:</strong> First, establish the base size of the parent. Then give both the child and grandchild a size of <code>2em</code> and watch the grandchild compound.
-            <pre><code>.em-parent-box { font-size: 20px; }
-.em-child { font-size: 2em; }
-.em-grandchild { font-size: 2em; }</code></pre>
-        </div>
-
-        <div class="demo-area">
-            <p class="demo-hint"><em>All nested text starts the same until the live CSS is added.</em></p>
-            <div class="em-parent-box">
-                Parent element
-                <div class="em-child">
-                    Child element
-                    <div class="em-grandchild">
-                        Grandchild element
+                <div class="demo-area">
+                    <span class="demo-title">Demo Area:</span>
+                    <p class="demo-note">Neutral state before the pixel values are applied.</p>
+                    <div>
+                        <strong class="px-text-small">Sample text A</strong>
+                    </div>
+                    <div class="demo-spacer"></div>
+                    <div>
+                        <strong class="px-text-large">Sample text B</strong>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <details class="prediction-answer">
-            <summary>Prediction Answer</summary>
-            <p>The child becomes 40px because it is 2 times its 20px parent. The grandchild then doubles again from the child, so it becomes 80px. This is the compounding behavior of <code>em</code>.</p>
-        </details>
-    </section>
+                <details class="prediction-answer">
+                    <summary>Prediction Answer</summary>
+                    <p>Both values stay fixed. The 16px text remains smaller than the 32px text, and neither one depends on the parent element.</p>
+                </details>
+            </section>
 
-    <section class="slide">
-        <span class="slide-badge">04</span>
-        <h2 class="slide-title">Slide 4: Root Em (<code>rem</code>)</h2>
-        <div class="speaker-notes">
-            <p>Because the math for <code>em</code> compounding gets too messy, we have an amazing alternative: <code>rem</code>, which stands for root em.</p>
-            <p>Instead of looking at its direct parent, <code>rem</code> always looks up to the very root of the document, the <code>&lt;html&gt;</code> element. This prevents compounding completely.</p>
-        </div>
+            <section class="slide" id="slide-03">
+                <div class="slide-topbar">
+                    <span class="slide-badge">03</span>
+                    <nav class="slide-nav" aria-label="Jump to slide">
+                        <a href="#slide-01">01</a>
+                        <a href="#slide-02">02</a>
+                        <a href="#slide-03">03</a>
+                        <a href="#slide-04">04</a>
+                        <a href="#slide-05">05</a>
+                        <a href="#slide-06">06</a>
+                        <a href="#slide-07">07</a>
+                    </nav>
+                </div>
+                <h2 class="slide-title">Slide 3: Em (<code>em</code>)</h2>
+                <div class="learn-box">
+                    <strong>Learn:</strong>
+                    <p><code>em</code> is a relative unit based on the <code>font-size</code> of its parent element.</p>
+                    <p>When <code>em</code> is used in nested elements, the size can compound, which means each level can become larger again.</p>
+                </div>
 
-        <div class="prediction-box">
-            <strong>Prediction:</strong>
-            If we set the root (<code>html</code>) to 16px:
-            <ul>
-                <li>What will 2.5rem be?</li>
-                <li>Will it depend on this container?</li>
-            </ul>
-        </div>
+                <div class="prediction-box">
+                    <strong>Prediction:</strong>
+                    If the parent is 20px and the child is 2em:
+                    <ul>
+                        <li>What will the child size be?</li>
+                        <li>If the grandchild is also 2em, what happens next?</li>
+                        <li>Does it stay the same or grow again?</li>
+                    </ul>
+                </div>
 
-        <div class="action-box">
-            <strong>Practice:</strong> Set the root size of the document, then size our text relative to that root.
-            <pre><code>html { font-size: 16px; }
+                <div class="action-box">
+                    <strong>Practice:</strong> First, establish the base size of the parent. Then give both the child and grandchild a size of <code>2em</code> and watch the grandchild compound.
+                    <pre><code>.em-parent-box { font-size: 20px; }
+.em-child { font-size: 2em; }
+.em-grandchild { font-size: 2em; }</code></pre>
+                </div>
+
+                <div class="demo-area">
+                    <span class="demo-title">Demo Area:</span>
+                    <p class="demo-note">All nested text starts the same before the live CSS is added.</p>
+                    <div class="em-parent-box">
+                        Parent element
+                        <div class="em-child">
+                            Child element
+                            <div class="em-grandchild">
+                                Grandchild element
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <details class="prediction-answer">
+                    <summary>Prediction Answer</summary>
+                    <p>The child becomes 40px because it is 2 times its 20px parent. The grandchild then doubles again from the child, so it becomes 80px. This is the compounding behavior of <code>em</code>.</p>
+                </details>
+            </section>
+
+            <section class="slide" id="slide-04">
+                <div class="slide-topbar">
+                    <span class="slide-badge">04</span>
+                    <nav class="slide-nav" aria-label="Jump to slide">
+                        <a href="#slide-01">01</a>
+                        <a href="#slide-02">02</a>
+                        <a href="#slide-03">03</a>
+                        <a href="#slide-04">04</a>
+                        <a href="#slide-05">05</a>
+                        <a href="#slide-06">06</a>
+                        <a href="#slide-07">07</a>
+                    </nav>
+                </div>
+                <h2 class="slide-title">Slide 4: Root Em (<code>rem</code>)</h2>
+                <div class="learn-box">
+                    <strong>Learn:</strong>
+                    <p><code>rem</code> means root em. It always measures from the root <code>html</code> size of the page.</p>
+                    <p>Because it does not depend on nearby parent elements, <code>rem</code> is easier to predict than <code>em</code>.</p>
+                </div>
+
+                <div class="prediction-box">
+                    <strong>Prediction:</strong>
+                    If we set the root (<code>html</code>) to 16px:
+                    <ul>
+                        <li>What will 2.5rem be?</li>
+                        <li>Will it depend on this container?</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <strong>Practice:</strong> Set the root size of the document, then size our text relative to that root.
+                    <pre><code>html { font-size: 16px; }
 .rem-text { font-size: 2.5rem; }</code></pre>
-        </div>
+                </div>
 
-        <div class="demo-area">
-            <div class="tiny-container-note">Even if this container was tiny...</div>
-            <strong class="rem-text">This text stays neutral until you add the live CSS.</strong>
-        </div>
+                <div class="demo-area">
+                    <span class="demo-title">Demo Area:</span>
+                    <p class="demo-note">This example stays tied to the root size of the page.</p>
+                    <strong class="rem-text">This text stays neutral until you add the live CSS.</strong>
+                </div>
 
-        <details class="prediction-answer">
-            <summary>Prediction Answer</summary>
-            <p><code>2.5rem</code> becomes 40px because it always uses the root size of 16px. It does not depend on this local container.</p>
-        </details>
-    </section>
+                <details class="prediction-answer">
+                    <summary>Prediction Answer</summary>
+                    <p><code>2.5rem</code> becomes 40px because it always uses the root size of 16px. It does not depend on this local container.</p>
+                </details>
+            </section>
 
-    <section class="slide">
-        <span class="slide-badge">05</span>
-        <h2 class="slide-title">Slide 5: Percentages (<code>%</code>)</h2>
-        <div class="speaker-notes">
-            <p>Percentages define a size relative to the dimensions of a parent container. Right now, our wrapper stretches wide, and the inner box is small.</p>
-            <p>If we restrict the wrapper, and give the child a percentage, watch how they share a relationship.</p>
-        </div>
+            <section class="slide" id="slide-05">
+                <div class="slide-topbar">
+                    <span class="slide-badge">05</span>
+                    <nav class="slide-nav" aria-label="Jump to slide">
+                        <a href="#slide-01">01</a>
+                        <a href="#slide-02">02</a>
+                        <a href="#slide-03">03</a>
+                        <a href="#slide-04">04</a>
+                        <a href="#slide-05">05</a>
+                        <a href="#slide-06">06</a>
+                        <a href="#slide-07">07</a>
+                    </nav>
+                </div>
+                <h2 class="slide-title">Slide 5: Percentages (<code>%</code>)</h2>
+                <div class="learn-box">
+                    <strong>Learn:</strong>
+                    <p><code>%</code> is a relative unit that measures size based on a parent container.</p>
+                    <p>If the parent changes size, the child element using a percentage changes with it.</p>
+                </div>
 
-        <div class="prediction-box">
-            <strong>Prediction:</strong>
-            If the parent is 200px wide:
-            <ul>
-                <li>What is 50% of that?</li>
-                <li>What happens if the parent size changes?</li>
-            </ul>
-        </div>
+                <div class="prediction-box">
+                    <strong>Prediction:</strong>
+                    If the parent is 200px wide:
+                    <ul>
+                        <li>What is 50% of that?</li>
+                        <li>What happens if the parent size changes?</li>
+                    </ul>
+                </div>
 
-        <div class="action-box">
-            <strong>Practice:</strong> Let's constrain the parent wrapper, and tell the child to only take up 50% of the available width.
-            <pre><code>.percent-wrapper { width: 200px; }
+                <div class="action-box">
+                    <strong>Practice:</strong> Let's constrain the parent wrapper, and tell the child to only take up 50% of the available width.
+                    <pre><code>.percent-wrapper { width: 200px; }
 .percent-child-box { width: 50%; }</code></pre>
-        </div>
+                </div>
 
-        <div class="demo-area">
-            <div class="percent-wrapper">
-                <span class="percent-label">Parent wrapper</span>
-                <div class="percent-child-box">Child box</div>
+                <div class="demo-area">
+                    <span class="demo-title">Demo Area:</span>
+                    <p class="demo-note">The child box reacts to the width of its parent wrapper.</p>
+                    <div class="percent-wrapper">
+                        <span class="percent-label">Parent wrapper</span>
+                        <div class="percent-child-box">Child box</div>
+                    </div>
+                </div>
+
+                <details class="prediction-answer">
+                    <summary>Prediction Answer</summary>
+                    <p>If the parent is 200px wide, a child with <code>width: 50%</code> becomes 100px wide. If the parent changes size, the child changes with it.</p>
+                </details>
+            </section>
+
+            <section class="slide" id="slide-06">
+                <div class="slide-topbar">
+                    <span class="slide-badge">06</span>
+                    <nav class="slide-nav" aria-label="Jump to slide">
+                        <a href="#slide-01">01</a>
+                        <a href="#slide-02">02</a>
+                        <a href="#slide-03">03</a>
+                        <a href="#slide-04">04</a>
+                        <a href="#slide-05">05</a>
+                        <a href="#slide-06">06</a>
+                        <a href="#slide-07">07</a>
+                    </nav>
+                </div>
+                <h2 class="slide-title">Slide 6: Viewport Units (<code>vw</code>, <code>vh</code>)</h2>
+                <div class="learn-box">
+                    <strong>Learn:</strong>
+                    <p>Viewport units are based on the size of the browser window, also called the viewport.</p>
+                    <p><code>vw</code> follows viewport width, and <code>vh</code> follows viewport height, so these units respond directly to the screen size.</p>
+                </div>
+
+                <div class="prediction-box">
+                    <strong>Prediction:</strong>
+                    If we use 50vw and 20vh:
+                    <ul>
+                        <li>What happens when we resize the browser?</li>
+                        <li>Does it depend on any parent element?</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <strong>Practice:</strong> Let's give our demo box a width of 50vw and a height of 20vh.
+                    <pre><code>.viewport-demo-box { width: 50vw; height: 20vh; }</code></pre>
+                </div>
+
+                <div class="demo-area">
+                    <span class="demo-title">Demo Area:</span>
+                    <p class="demo-note">Resize the browser window to see the box respond.</p>
+                    <div class="viewport-demo-box">Resize me</div>
+                </div>
+
+                <details class="prediction-answer">
+                    <summary>Prediction Answer</summary>
+                    <p>The box always tracks the browser window. At 50vw it uses half the viewport width, and at 20vh it uses one fifth of the viewport height, regardless of parent containers.</p>
+                </details>
+            </section>
+
+            <section class="slide" id="slide-07">
+                <div class="slide-topbar">
+                    <span class="slide-badge">07</span>
+                    <nav class="slide-nav" aria-label="Jump to slide">
+                        <a href="#slide-01">01</a>
+                        <a href="#slide-02">02</a>
+                        <a href="#slide-03">03</a>
+                        <a href="#slide-04">04</a>
+                        <a href="#slide-05">05</a>
+                        <a href="#slide-06">06</a>
+                        <a href="#slide-07">07</a>
+                    </nav>
+                </div>
+                <h2 class="slide-title">Slide 7: Summary and Q&amp;A</h2>
+                <div class="learn-box">
+                    <strong>Learn:</strong>
+                    <p>Each CSS unit has a different sizing reference, so the best choice depends on what should stay fixed and what should adapt.</p>
+                    <ul>
+                        <li><strong><code>px</code></strong>: A fixed, absolute measurement. Great for exact constraints.</li>
+                        <li><strong><code>em</code></strong>: A unit relative to its parent. Watch out for compounding.</li>
+                        <li><strong><code>rem</code></strong>: A unit relative to the document root. Safe and predictable scaling.</li>
+                        <li><strong><code>%</code></strong>: Fluid layouts based on parent containers.</li>
+                        <li><strong><code>vw</code>/<code>vh</code></strong>: Fluid layouts based directly on the browser window size itself.</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <strong>Practice:</strong> Open the floor to questions. You can freely edit any of the CSS values in the IDE to immediately answer student "what if" scenarios.
+                </div>
+            </section>
+
+            <footer class="page-footer">
+                <div class="resource-links" aria-label="Additional resources">
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank" rel="noreferrer">MDN Values &amp; Units</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" target="_blank" rel="noreferrer">MDN Length</a>
+                    <a href="https://www.w3schools.com/css/css_units.asp" target="_blank" rel="noreferrer">W3Schools Units</a>
+                    <a href="https://web.dev/learn/css/sizing/" target="_blank" rel="noreferrer">web.dev Sizing</a>
+                </div>
+                <p>Lehi Gomez | BSIT1-03</p>
+            </footer>
+        </main>
+
+        <aside class="presenter-panel" id="presenter-panel" aria-label="Presenter notes">
+            <div class="presenter-panel-inner">
+                <div class="presenter-panel-header">
+                    <p class="presenter-eyebrow">Presenter Notes</p>
+                    <h2>Teaching Guide</h2>
+                    <p>Use this panel as a quick cue sheet while the main page stays clean for presenting.</p>
+                </div>
+
+                <nav class="presenter-nav" aria-label="Slides">
+                    <a href="#slide-01">01</a>
+                    <a href="#slide-02">02</a>
+                    <a href="#slide-03">03</a>
+                    <a href="#slide-04">04</a>
+                    <a href="#slide-05">05</a>
+                    <a href="#slide-06">06</a>
+                    <a href="#slide-07">07</a>
+                </nav>
+
+                <section class="presenter-note-card">
+                    <h3>Slide 1</h3>
+                    <p>Welcome, everyone! Today, we're diving into CSS units. Understanding units is the foundation of building websites that look great whether you are viewing them on a massive desktop monitor or a tiny mobile phone.</p>
+                    <p>In CSS, we divide units into two main categories: <strong>absolute</strong>, which stay fixed, and <strong>relative</strong>, which adapt to context. Use the table on the slide to introduce that difference before moving into specific examples.</p>
+                </section>
+
+                <section class="presenter-note-card">
+                    <h3>Slide 2</h3>
+                    <p>Important: a CSS pixel is not a literal physical glowing dot on the screen. On high-density displays, it is a standardized measurement rather than a one-to-one screen dot.</p>
+                    <p>Emphasize that <code>px</code> is absolute. If you set <code>font-size: 16px</code>, it stays that size no matter what parent container it sits inside. It is consistent, but it is not responsive.</p>
+                </section>
+
+                <section class="presenter-note-card">
+                    <h3>Slide 3</h3>
+                    <p>Now we enter the world of relative units. The <code>em</code> unit calculates its math based on the specific <code>font-size</code> of its parent element.</p>
+                    <p>Walk through the compounding slowly: if the parent is 20px, then a child at 2em becomes 40px. If the grandchild is also 2em, it doubles again from the child and becomes 80px.</p>
+                </section>
+
+                <section class="presenter-note-card">
+                    <h3>Slide 4</h3>
+                    <p>Because the math for <code>em</code> compounding can get messy, this is a good place to introduce <code>rem</code> as the safer alternative.</p>
+                    <p>Explain that <code>rem</code> always looks up to the root <code>html</code> element. It does not read from the local parent, so it avoids compounding completely.</p>
+                </section>
+
+                <section class="presenter-note-card">
+                    <h3>Slide 5</h3>
+                    <p>Percentages define a size relative to the dimensions of a parent container, so keep the explanation grounded in that parent-child relationship.</p>
+                    <p>Point out that when the wrapper changes, the child changes with it. That is what makes percentage-based layouts fluid.</p>
+                </section>
+
+                <section class="presenter-note-card">
+                    <h3>Slide 6</h3>
+                    <p>Finally, introduce viewport units by contrasting them with percentages. Percentages depend on a parent container, but viewport units ignore parents and follow the browser window itself.</p>
+                    <p>As you explain <code>1vw</code> and <code>1vh</code>, resize the browser slightly so students can see the box respond in real time.</p>
+                </section>
+
+                <section class="presenter-note-card">
+                    <h3>Slide 7</h3>
+                    <p>Close by recapping the unit references: <code>px</code> is fixed, <code>em</code> reads from the parent, <code>rem</code> reads from the root, percentages read from the parent container, and <code>vw</code> or <code>vh</code> read from the viewport.</p>
+                    <p>Invite quick "what if" edits in the CSS so the recap feels interactive instead of purely verbal.</p>
+                </section>
             </div>
-        </div>
+        </aside>
+    </div>
 
-        <details class="prediction-answer">
-            <summary>Prediction Answer</summary>
-            <p>If the parent is 200px wide, a child with <code>width: 50%</code> becomes 100px wide. If the parent changes size, the child changes with it.</p>
-        </details>
-    </section>
+    <script>
+        const notesToggle = document.querySelector('.notes-toggle');
+        const body = document.body;
 
-    <section class="slide">
-        <span class="slide-badge">06</span>
-        <h2 class="slide-title">Slide 6: Viewport Units (<code>vw</code>, <code>vh</code>)</h2>
-        <div class="speaker-notes">
-            <p>Finally, viewport units. The viewport is simply the framing area of your web browser. This unit completely ignores HTML parents and containers.</p>
-            <p><code>1vw</code> stands for exactly 1% of the total screen width, and <code>1vh</code> stands for exactly 1% of the total screen height. Try resizing your browser window.</p>
-        </div>
-
-        <div class="prediction-box">
-            <strong>Prediction:</strong>
-            If we use 50vw and 20vh:
-            <ul>
-                <li>What happens when we resize the browser?</li>
-                <li>Does it depend on any parent element?</li>
-            </ul>
-        </div>
-
-        <div class="action-box">
-            <strong>Practice:</strong> Let's give our demo box a width of 50vw and a height of 20vh.
-            <pre><code>.viewport-demo-box { width: 50vw; height: 20vh; }</code></pre>
-        </div>
-
-        <div class="demo-area">
-            <p class="demo-hint">Try resizing your browser window.</p>
-            <div class="viewport-demo-box">Resize me</div>
-        </div>
-
-        <details class="prediction-answer">
-            <summary>Prediction Answer</summary>
-            <p>The box always tracks the browser window. At 50vw it uses half the viewport width, and at 20vh it uses one fifth of the viewport height, regardless of parent containers.</p>
-        </details>
-    </section>
-
-    <section class="slide">
-        <span class="slide-badge">07</span>
-        <h2 class="slide-title">Slide 7: Summary and Q&amp;A</h2>
-        <div class="speaker-notes">
-            <p>Let's recap what we learned:</p>
-            <ul>
-                <li><strong><code>px</code></strong>: A fixed, absolute measurement. Great for exact constraints.</li>
-                <li><strong><code>em</code></strong>: A unit relative to its parent. Watch out for compounding.</li>
-                <li><strong><code>rem</code></strong>: A unit relative to the document root. Safe and predictable scaling.</li>
-                <li><strong><code>%</code></strong>: Fluid layouts based on parent containers.</li>
-                <li><strong><code>vw</code>/<code>vh</code></strong>: Fluid layouts based directly on the browser window size itself.</li>
-            </ul>
-        </div>
-
-        <div class="action-box">
-            <strong>Practice:</strong> Open the floor to questions. You can freely edit any of the CSS values in the IDE to immediately answer student "what if" scenarios.
-        </div>
-    </section>
-
-    <footer class="page-footer">
-        <p>Lehi Gomez | BSIT1-03</p>
-    </footer>
-
+        notesToggle.addEventListener('click', () => {
+            const isOpen = body.classList.toggle('notes-visible');
+            notesToggle.setAttribute('aria-expanded', String(isOpen));
+            notesToggle.textContent = isOpen ? 'X' : 'Presenter Notes';
+        });
+    </script>
 </body>
 
 </html>
