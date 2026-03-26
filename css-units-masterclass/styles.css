@@ -455,12 +455,13 @@ body.notes-visible .presentation-content {
     font-size: 0.95rem;
 }
 
-/* Live demo note:
-   Add these during class when teaching fixed pixel sizing.
-   Example:
+/* 
+    PIXEL
+    Live demo note:
    .px-text-small { font-size: 16px; }
    .px-text-large { font-size: 32px; }
 */
+
 
 .em-parent-box {
     padding: 18px;
@@ -469,9 +470,9 @@ body.notes-visible .presentation-content {
     background: rgba(255, 255, 255, 0.8);
 }
 
-/* Live demo note:
-   Add these during class to show em using the parent font size.
-   Example:
+/* 
+   em
+   Live demo note:
    .em-parent-box { font-size: 20px; }
    .em-child { font-size: 2em; }
    .em-grandchild { font-size: 2em; }
@@ -491,9 +492,9 @@ body.notes-visible .presentation-content {
     background: rgba(37, 99, 235, 0.14);
 }
 
-/* Live demo note:
-   Add this during class to show rem using the root html size.
-   Example:
+/* 
+   rem
+   Live demo note:
    html { font-size: 16px; }
    .rem-text { font-size: 2.5rem; }
 */
@@ -525,9 +526,9 @@ body.notes-visible .presentation-content {
     font-family: "Aptos", "Segoe UI Variable Text", "Segoe UI", sans-serif;
 }
 
-/* Live demo note:
-   Add this during class to show percentage sizing from the parent.
-   Example:
+/* 
+   Percentage (%)
+   Live demo note:
    .percent-child-box { width: 50%; }
 */
 
@@ -547,9 +548,9 @@ body.notes-visible .presentation-content {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
-/* Live demo note:
-   Replace the neutral size above during class to demonstrate viewport units.
-   Example:
+/* 
+   viewport height and width
+   Live demo note:
    .viewport-demo-box { width: 50vw; height: 20vh; }
 */
 
